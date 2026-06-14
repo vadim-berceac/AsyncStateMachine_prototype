@@ -13,12 +13,13 @@ public class HitReactionState : AsyncState
     {
         await base.OnEnter(ct);
         Debug.Log("Entering Hit Reaction State...");
-        await UniTask.Delay(5000, cancellationToken: ct); 
     }
     
     public override async UniTask OnUpdate(CancellationToken ct)
     {
-        await base.OnUpdate(ct);
+        await base.OnUpdate(ct);        
+        
+        await UniTask.Delay(5000, cancellationToken: ct); 
         
         StateMachine.Ctx.HitReaction(false);
         
